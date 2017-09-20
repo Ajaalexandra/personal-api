@@ -4,7 +4,7 @@ Personal API
 ============
 
 ##Objective
-Utilize Node.js and Express to create a simple REST API with your own data. You'll be building these endpoints by using `req.params`, `req.body`, and `req.query`. 
+Utilize Node.js and Express to create a simple REST API with your own data. You'll be building these endpoints by using `req.params`, `req.body`, and `req.query`.
 
 #### Step 1: Build your server's core - installation and server.js file.
 * Create a file named `index.js`
@@ -150,7 +150,7 @@ var main_ctrl = require('./controllers/main_ctrl.js');
 #### Step 4: Add ordering to your API
 For the occupations endpoint with the get method that we just wrote, let's have a way for the client to get a specific ordering, alphabetized or reverse alphabetized.
 * Make it so when the client requests occupations with a order query parameter, return an alphabetized list for the query `order=desc` and a reverse alphabetized list for the query `order=asc` (if your occupations endpoints are arrays of strings, you can simply use the Javascript `.sort()` and `.reverse()` methods of an array to do your sorting).
-* This endpoint needs to work with or without an order query. So you will need to use an if statement (or a switch statement) to check the value/existence of `req.query.order`. 
+* This endpoint needs to work with or without an order query. So you will need to use an if statement (or a switch statement) to check the value/existence of `req.query.order`.
 
 #### Step 5: Make writable endpoints
 Now you're going to make some endpoints that can be added to or modified by `POST` or `PUT` requests. Make sure that in addition to sending the new/updated information, you also modify your user object so that future `GET` requests will reflect your changes.
@@ -160,6 +160,9 @@ Now you're going to make some endpoints that can be added to or modified by `POS
 
 ###### `PUT /location`
 - Updates your current location.
+
+
+
 
 ###### `POST /hobbies`
 - Adds to your list of hobbies.
@@ -184,7 +187,7 @@ This endpoint is going to be a bit more complicated than those you've made previ
 }
 ```
 
-* Create a file called `skills.js` and populate it with an array of skills objects like the example above. This file will be similar in nature to your `user.js` file and as such should utilize `module.exports` and be required in the necessary controller files. 
+* Create a file called `skills.js` and populate it with an array of skills objects like the example above. This file will be similar in nature to your `user.js` file and as such should utilize `module.exports` and be required in the necessary controller files.
 * Create the endpoints:
 
 ###### `GET /skills`
@@ -197,7 +200,7 @@ This endpoint is going to be a bit more complicated than those you've made previ
 - Like in step 4, use an if statement (or a ternary operator) to determine the existence of `req.query.experience` and then use .filter to get the skills that match the criteria.
 
 ###### `POST /skills`
-- Add a skill to the collection of skills. For this endpoint we need to create a function that will dynamically create IDs for us based on the length of our skills array. For example: 
+- Add a skill to the collection of skills. For this endpoint we need to create a function that will dynamically create IDs for us based on the length of our skills array. For example:
 ```let id = skills.length + 1```
 
 
